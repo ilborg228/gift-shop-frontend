@@ -3,18 +3,18 @@
   <div class="container margin-top">
     <div class="row">
       <div class="col-lg-4 col-6 thumb">
-        <a data-fancybox="gallery" href="../img/shop/1.jpg">
-          <img class="img-fluid" src="../img/shop/1.jpg" alt="">
+        <a data-fancybox="gallery" href="http://samaragiftshop.ru/src/shop/1.jpg">
+          <img class="img-fluid" src="http://samaragiftshop.ru/src/shop/1.jpg" alt="">
         </a>
       </div>
       <div class="col-lg-4 col-6 thumb">
-        <a data-fancybox="gallery" href="@/img/shop/2.jpg">
-          <img class="img-fluid" src="@/img/shop/2.jpg" alt="">
+        <a data-fancybox="gallery" href="http://samaragiftshop.ru/src/shop/2.jpg">
+          <img class="img-fluid" src="http://samaragiftshop.ru/src/shop/2.jpg" alt="">
         </a>
       </div>
       <div class="col-lg-4 col-6 thumb">
-        <a data-fancybox="gallery" href="@/img/shop/3.jpg">
-          <img class="img-fluid" src="@/img/shop/3.jpg" alt="">
+        <a data-fancybox="gallery" href="http://samaragiftshop.ru/src/shop/3.jpg">
+          <img class="img-fluid" src="http://samaragiftshop.ru/src/shop/3.jpg" alt="">
         </a>
       </div>
       <div class="col-lg-4 col-6 thumb">
