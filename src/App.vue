@@ -8,7 +8,7 @@
 
 <script>
 import axios from 'axios';
-import Categories from "./components/Categories";
+import Categories from "./components/Category";
 import Main from "./pages/Main";
 import Navbar from "./components/Navbar";
 import Store from "./pages/Store";

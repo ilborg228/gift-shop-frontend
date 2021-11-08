@@ -1,12 +1,12 @@
-<template>
-  <h1 class="display1 text-center" style="margin-top:100px;">{{ title }}</h1>
-  <hr>
-
+<template xmlns="">
+  <h1 class="display1 text-center" style="margin-top: 100px;">Каталог</h1>
   <section class="sections random-product">
     <div class="container-fluid">
       <div class="container">
-        <div class="row ">
-          <Item v-bind:products="products"></Item>
+        <div class="row">
+
+          <Category v-bind:categories="categories"></Category>
+
         </div><!--.row-->
       </div><!--.container-->
     </div><!--.container-fluid-->
@@ -14,35 +14,33 @@
 </template>
 
 <script>
-import Item from "../components/Item";
+import Category from "@/components/Category";
+import axios from "axios";
+
 export default {
   name: "Store",
-  components: {Item},
+  components:{
+    Category
+  },
   data(){
-    return {
-      products:[
-        {
-          name:"test",
-          price:99.90,
-          imgSource:"http://samaragiftshop.ru/src/shop/2.jpg",
-          height:100
-        },
-        {
-          name:"test2",
-          price:99.90,
-          imgSource:"http://samaragiftshop.ru/src/shop/3.jpg",
-          height:100
-        },
-        {
-          name:"test3",
-          price:99.90,
-          imgSource:"http://samaragiftshop.ru/src/shop/3.jpg",
-          height:100
-        }
-      ],
-      title:"Category"
+    return{
+      categories:[]
     }
+  },
+  methods:{
+    async fetchItems(){
+      try {
+        let response = await axios.get("http://localhost:8080/allcategories")
+        this.categories = response.data
+      }catch (e) {
+        alert(e)
+      }
+    }
+  },
+  mounted() {
+    this.fetchItems()
   }
+
 }
 </script>
 

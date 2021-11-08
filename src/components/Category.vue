@@ -2,15 +2,15 @@
 
   <!--Категория-->
   <div class="col-md-4 items" v-for="category in categories">
-    <!--Ссылка--><a href="#"><!--Фото--><img class="logo container-fluid" src="#" alt="category-img"/></a>
-    <!--Название--><h4 class="display1 text-center text-danger">{{category.categoryName}}</h4>
+    <!--Ссылка--><a href="/products/${category.categoryName}"><!--Фото--><img class="logo container-fluid" :src="category.imgSource" alt="category-img"/></a>
+    <!--Название--><h4 class="display1 text-center">{{category.categoryName}}</h4>
   </div><!--Категория-->
 
 </template>
 
 <script>
 export default {
-  name: "categories",
+  name: "category",
   props:{
     categories:{
       type:Array,
