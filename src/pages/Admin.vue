@@ -1,58 +1,13 @@
 <template>
-<h1>Admin</h1>
-  <form class="needs-validation" novalidate>
-    <div class="form-row">
-      <div class="col-md-4 mb-3">
-        <label for="validationCustom01">First name</label>
-        <input type="text" class="form-control" id="validationCustom01" placeholder="Product name" value="" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="validationCustom02">Last name</label>
-        <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="validationCustomUsername">Username</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroupPrepend">@</span>
-          </div>
-          <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
-          <div class="invalid-feedback">
-            Please choose a username.
-          </div>
-        </div>
-      </div>
+<h1 class="display1 text-center">Admin</h1>
+  <form @submit.prevent>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Имя категории" v-model="category.categoryName" required>
     </div>
-    <div class="form-row">
-      <div class="col-md-6 mb-3">
-        <label for="validationCustom03">City</label>
-        <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
-        <div class="invalid-feedback">
-          Please provide a valid city.
-        </div>
-      </div>
-      <div class="col-md-3 mb-3">
-        <label for="validationCustom04">State</label>
-        <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
-        <div class="invalid-feedback">
-          Please provide a valid state.
-        </div>
-      </div>
-      <div class="col-md-3 mb-3">
-        <label for="validationCustom05">Zip</label>
-        <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
-        <div class="invalid-feedback">
-          Please provide a valid zip.
-        </div>
-      </div>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Ссылка на фото" v-model="category.imgSource" required>
     </div>
-    <button class="btn btn-primary" type="submit">Submit form</button>
+    <button class="btn btn-primary" @click="createCategory">Создать категорию</button>
   </form>
 </template>
 
@@ -61,11 +16,22 @@ import axios from "axios";
 
 export default {
   name: "Admin",
+  data(){
+    return{
+      category:{
+        id:0,
+        imgSource:'',
+        categoryName:''
+      }
+    }
+  },
   methods:{
-    async fetchItems(){
+    async createCategory(){
       try {
-        let response = await axios.get("http://localhost:8080/allcategories")
-        this.categories = response.data
+        let response = await axios.post("http://localhost:8080/addcategory",this.category)
+        console.log(response.data)
+        this.category.categoryName=''
+        this.category.imgSource=''
       }catch (e) {
         alert(e)
       }
@@ -75,5 +41,7 @@ export default {
 </script>
 
 <style scoped>
-
+form{
+  margin:0 50px 0 10px ;
+}
 </style>
