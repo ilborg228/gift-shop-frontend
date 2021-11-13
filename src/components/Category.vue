@@ -27,5 +27,8 @@ export default {
 </script>
 
 <style scoped>
-
+.logo{
+  margin-bottom:10px;
+  border-radius: 20%;
+}
 </style>

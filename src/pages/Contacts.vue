@@ -27,5 +27,7 @@ export default {
 </script>
 
 <style scoped>
-
+.text-adres{
+  font-size: 200%;
+}
 </style>

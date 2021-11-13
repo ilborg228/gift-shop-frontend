@@ -7,21 +7,11 @@
 </template>
 
 <script>
-import axios from 'axios';
-import Categories from "./components/Category";
-import Main from "./pages/Main";
 import Navbar from "./components/Navbar";
-import Store from "./pages/Store";
 
 export default {
   components: {
-    Store,
-    Navbar,
-    Main,
-    Categories
-  },
-  methods:{
-
+    Navbar
   }
 }
 </script>
@@ -32,17 +22,12 @@ export default {
 #app{
   margin-top: 100px;
 }
-
 .jumbotron{
   padding: 1em;
   border-radius: 0;
   width: 70%;
   margin:0 auto;
   margin-top:20px;
-}
-.logo{
-  margin-bottom:10px;
-  border-radius: 20%;
 }
 .alert{
   width: 75%;
@@ -75,8 +60,5 @@ p{
 }
 h4{
   font-family: 'Courgette', cursive;
-}
-.text-adres{
-  font-size: 200%;
 }
 </style>
