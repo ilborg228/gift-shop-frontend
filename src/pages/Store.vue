@@ -30,7 +30,7 @@ export default {
   methods:{
     async fetchItems(){
       try {
-        let response = await axios.get("http://localhost:8080/allcategories")
+        let response = await axios.get(this.host+"/allcategories")
         this.categories = response.data
       }catch (e) {
         alert(e)

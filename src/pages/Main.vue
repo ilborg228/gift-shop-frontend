@@ -18,8 +18,8 @@
         </a>
       </div>
       <div class="col-lg-4 col-6 thumb">
-        <a data-fancybox="gallery" href="@/img/shop/4.jpg">
-          <img class="img-fluid" src="@/img/shop/4.jpg" alt="">
+        <a data-fancybox="gallery" href="../img/shop/4.jpg">
+          <img class="img-fluid" src="../img/shop/4.jpg" alt="">
         </a>
       </div>
       <div class="col-lg-4 col-6 thumb">

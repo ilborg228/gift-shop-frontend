@@ -28,7 +28,7 @@ export default {
   methods:{
     async createCategory(){
       try {
-        let response = await axios.post("http://localhost:8080/addcategory",this.category)
+        let response = await axios.post(this.host+"/addcategory",this.category)
         console.log(response.data)
         this.category.categoryName=''
         this.category.imgSource=''
