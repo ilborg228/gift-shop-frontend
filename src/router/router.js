@@ -5,6 +5,7 @@ import Store from "@/pages/Store";
 import Contacts from "@/pages/Contacts";
 import Admin from "@/pages/Admin";
 import Products from "@/pages/Products";
+import ItemPage from "@/pages/ItemPage";
 
 const routes = [
     {
@@ -28,8 +29,12 @@ const routes = [
         component: Admin
     },
     {
-        path:'/products/:categoryName',
+        path:'/product/:categoryName',
         component: Products
+    },
+    {
+        path:'/product/:id',
+        component: ItemPage
     }
 ]
 

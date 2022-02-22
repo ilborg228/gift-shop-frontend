@@ -12,6 +12,11 @@
         <li class="nav-item">
           <a class="nav-link" href="/contacts">Контакты<span class="sr-only">(current)</span></a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/admin">Admin<span class="sr-only">(current)</span></a>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="/about">Юридическая информация<span class="sr-only">(current)</span></a>
         </li>

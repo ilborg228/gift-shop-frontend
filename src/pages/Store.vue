@@ -30,7 +30,7 @@ export default {
   methods:{
     async fetchItems(){
       try {
-        let response = await axios.get(this.host+"/allcategories")
+        let response = await axios.get(this.host+"/category")
         this.categories = response.data
       }catch (e) {
         alert(e)

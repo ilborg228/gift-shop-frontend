@@ -1,14 +1,18 @@
 <template>
 <h1 class="display1 text-center">Admin</h1>
-  <form @submit.prevent>
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Имя категории" v-model="category.categoryName" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Ссылка на фото" v-model="category.imgSource" required>
-    </div>
-    <button class="btn btn-primary" @click="createCategory">Создать категорию</button>
-  </form>
+
+  <div class="col-md-4 items">
+    <form @submit.prevent>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Имя категории" v-model="category.categoryName" required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Ссылка на фото" v-model="category.imgSource" required>
+      </div>
+      <button class="btn btn-primary" @click="createCategory">Создать категорию</button>
+    </form>
+  </div>
+
 </template>
 
 <script>
@@ -28,10 +32,11 @@ export default {
   methods:{
     async createCategory(){
       try {
-        let response = await axios.post(this.host+"/addcategory",this.category)
+        let response = await axios.post(this.host+"/category",this.category)
         console.log(response.data)
         this.category.categoryName=''
         this.category.imgSource=''
+        alert('Добавление прошло успешно')
       }catch (e) {
         alert(e)
       }

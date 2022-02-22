@@ -6,7 +6,9 @@
     <div class="container-fluid">
       <div class="container">
         <div class="row ">
+
           <Item v-bind:products="products"></Item>
+
         </div><!--.row-->
       </div><!--.container-->
     </div><!--.container-fluid-->
@@ -29,7 +31,7 @@ export default {
   methods:{
     async fetchProductByName(categoryName){
        try {
-         let response = await axios.get("http://localhost:8080/products/" + categoryName)
+         let response = await axios.get(this.host+"/products/" + categoryName)
          this.products=response.data
          console.log(response.data)
        }catch (e) {
