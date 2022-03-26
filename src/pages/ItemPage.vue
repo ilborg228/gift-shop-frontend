@@ -32,16 +32,16 @@ export default {
   methods:{
     async fetchProductById(id){
       try {
-        let response = await axios.get(this.host + "products/" + categoryName)
+        let response = await axios.get(this.host + "/product/" + id)
         this.product=response.data
         console.log(response.data)
       }catch (e) {
-        alert(e)
+        console.log(e)
       }
     }
   },
   mounted() {
-    this.fetchProductById(this.id)
+    //this.fetchProductById(this.id)
   }
 }
 </script>

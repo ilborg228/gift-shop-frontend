@@ -13,6 +13,24 @@
     </form>
   </div>
 
+  <div class="col-md-4 items">
+    <form @submit.prevent>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Имя товара" v-model="product.name" required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Ссылка на фото" v-model="product.imgSource" required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Id категории" v-model="product.categeoryId" required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Цена" v-model="product.price" required>
+      </div>
+      <button class="btn btn-primary" @click="createProduct">Создать товар</button>
+    </form>
+  </div>
+
 </template>
 
 <script>
@@ -23,9 +41,15 @@ export default {
   data(){
     return{
       category:{
-        id:0,
         imgSource:'',
         categoryName:''
+      },
+      product:{
+        categeoryId:'',
+        imgSource: '',
+        name: '',
+        height: '',
+        price: '',
       }
     }
   },
@@ -33,6 +57,18 @@ export default {
     async createCategory(){
       try {
         let response = await axios.post(this.host+"/category",this.category)
+        console.log(response.data)
+        this.category.categoryName=''
+        this.category.imgSource=''
+        alert('Добавление прошло успешно')
+      }catch (e) {
+        alert(e)
+      }
+    },
+
+    async createProduct(){
+      try {
+        let response = await axios.post(this.host+"/product/"+this.product.categeoryId,this.product)
         console.log(response.data)
         this.category.categoryName=''
         this.category.imgSource=''

@@ -32,6 +32,7 @@ export default {
       try {
         let response = await axios.get(this.host+"/category")
         this.categories = response.data
+        console.log(response.data)
       }catch (e) {
         alert(e)
       }

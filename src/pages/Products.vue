@@ -1,5 +1,5 @@
 <template>
-  <h1 class="display1 text-center" style="margin-top:100px;">{{ $route.params.categoryName }}</h1>
+  <h1 class="display1 text-center" style="margin-top:100px;">{{ category.categoryName }}</h1>
   <hr>
 
   <section class="sections random-product">
@@ -24,8 +24,17 @@ export default {
   components: {Item},
   data(){
     return{
-      products: [],
+      //products: [],
+      products: [{
+
+      }],
       categoryName:this.$route.params.categoryName
+    }
+  },
+  props:{
+    category:{
+      required:true,
+      type: Object
     }
   },
   methods:{
@@ -40,7 +49,7 @@ export default {
     }
   },
   mounted() {
-    this.fetchProductByName(this.categoryName)
+    //this.fetchProductByName(this.categoryName)
   }
 }
 </script>
