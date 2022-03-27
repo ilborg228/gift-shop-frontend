@@ -29,7 +29,7 @@ const routes = [
         component: Admin
     },
     {
-        path:'/products/:categoryName',
+        path:'/products/:categoryId',
         component: Products
     },
     {

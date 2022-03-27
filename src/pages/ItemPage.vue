@@ -41,7 +41,7 @@ export default {
     }
   },
   mounted() {
-    //this.fetchProductById(this.id)
+    this.fetchProductById(this.id)
   }
 }
 </script>
