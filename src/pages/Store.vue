@@ -3,9 +3,9 @@
   <section class="sections random-product">
     <div class="container-fluid">
       <div class="container">
-        <div class="row">
+        <div class="row" v-for="category in categories">
 
-          <Category v-bind:categories="categories"></Category>
+          <Category v-bind:category="category"></Category>
 
         </div><!--.row-->
       </div><!--.container-->

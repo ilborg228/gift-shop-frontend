@@ -1,7 +1,7 @@
 <template>
 
   <!--Категория-->
-  <div class="col-md-4 items" v-for="category in categories">
+  <div class="col-md-4 items">
     <!--Ссылка--><router-link :to="'/products/'+category.categoryId">
     <!--Фото--><img class="logo container-fluid" :src="category.imgSource" alt="category-img"/>
                 </router-link>
@@ -15,8 +15,8 @@
 export default {
   name: "category",
   props:{
-    categories:{
-      type:Array,
+    category:{
+      type:Object,
       required:true
     }
   },
