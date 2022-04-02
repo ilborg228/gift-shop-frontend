@@ -1,14 +1,16 @@
 <template>
-  <h1 class="display1 text-center" style="margin-top:100px;">{{ category.categoryName }}</h1>
+  <h1 class="display1 text-center" style="margin-top:100px;">{{ products.categoryName }}</h1>
   <hr>
 
   <section class="sections random-product">
     <div class="container-fluid">
       <div class="container">
         <div class="row ">
+          <!--Товар-->
+          <div class="col-md-4 items" v-for="product in products">
+          <Item v-bind:product="product"></Item>
 
-          <Item v-bind:products="products"></Item>
-
+          </div>
         </div><!--.row-->
       </div><!--.container-->
     </div><!--.container-fluid-->
@@ -24,23 +26,19 @@ export default {
   components: {Item},
   data(){
     return{
-      //products: [],
-      products: [{
+      products:{
+        categoryName: ''
+        [{
 
-      }],
-      categoryName:this.$route.params.categoryName
-    }
-  },
-  props:{
-    category:{
-      required:true,
-      type: Object
+        }]
+      },
+      categoryId:this.$route.params.categoryId
     }
   },
   methods:{
-    async fetchProductByName(categoryName){
+    async fetchProductByName(categoryId){
        try {
-         let response = await axios.get(this.host+"/products/" + categoryName)
+         let response = await axios.get(this.host+"/products/" + categoryId)
          this.products=response.data
          console.log(response.data)
        }catch (e) {
@@ -49,7 +47,7 @@ export default {
     }
   },
   mounted() {
-    //this.fetchProductByName(this.categoryName)
+    this.fetchProductByName(this.categoryId)
   }
 }
 </script>

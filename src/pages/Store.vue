@@ -3,10 +3,12 @@
   <section class="sections random-product">
     <div class="container-fluid">
       <div class="container">
-        <div class="row" v-for="category in categories">
+        <div class="row">
+          <div class="col-md-4 items" v-for="category in categories">
 
-          <Category v-bind:category="category"></Category>
+            <Category v-bind:category="category"></Category>
 
+          </div>
         </div><!--.row-->
       </div><!--.container-->
     </div><!--.container-fluid-->
